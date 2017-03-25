@@ -17,6 +17,7 @@ module.exports = function(config) {
     hashed_pwd: String,
     roles: [String]
   });
+  
   userSchema.methods = {
     authenticate: function(passwordToMatch) {
       return hashPwd(this.salt, passwordToMatch) === this.hashed_pwd;

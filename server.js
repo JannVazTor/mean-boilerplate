@@ -15,4 +15,9 @@ require('./server/config/passport')();
 require('./server/config/routes')(app);
 
 app.listen(config.port);
+
+app.use(function(){
+    console.log("User: "+req.user);
+    next();
+});
 console.log('Listening on port ' + config.port + '...');
