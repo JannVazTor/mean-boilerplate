@@ -1,0 +1,8 @@
+.container
+    .panel.panel-default
+        .panel-body
+            .form-group
+                input.form-control(placeholder="Email", ng-model="username")
+            .form-group
+                input.form-control(placeholder="Password", type="password", ng-model="password")
+            button.btn.btn-primary(ng-click="signin(username, password)") Sign In

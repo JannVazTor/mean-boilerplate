@@ -1,5 +1,5 @@
 doctype
-html
+html(ng-app='app')
   head
     title MultiVision
     base(href="/")
@@ -7,7 +7,7 @@ html
     link(rel="stylesheet", href="/vendor/bootstrap/dist/css/bootstrap.css")
     link(rel="stylesheet", href="/vendor/toastr/toastr.css")
     link(rel="stylesheet", href="/css/site.css")
-  body(ng-app='app')
+  body(ng-controller="mainCtrl")
     include currentUser
     block main-content
     include scripts

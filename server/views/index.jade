@@ -4,16 +4,23 @@ block main-content
   .navbar.navbar-inverse.navbar-fixed-top
     .container
       .navbar-header
-        a.navbar-brand(href="/") MultiVision
-          h6 -Extreme Tech Training
+        
       .navbar-collapse.collapse
         ul.nav.navbar-nav
           li
+            a.navbar-brand(href="/") MEANJS
+          li
             a(href="/") Home
-        div(ng-include="'/partials/account/navbar-login'")
-
+          li(ng-show="identity.isAuthenticated()")
+            a(href="/admin/users") Only for Admins
+          li(ng-hide="identity.isAuthenticated()")
+            a(href="/login") Log In
+          li(ng-show="identity.isAuthenticated()")
+            a(ng-click="signout()") Sign Out
+          li(ng-hide="identity.isAuthenticated()")
+            a(href="/signup") Sign Up
   section.content
     div(ng-view)
 
   footer.container.text-center
-    p &copy; 2013 MultiVision Corp International Ltd.
+    p &copy; 2017 MEANjs.
